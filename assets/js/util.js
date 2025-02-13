@@ -13,18 +13,22 @@
 		$a.each(function() {
 
 			var	$this = $(this),
+				id = $this.attr('id'),
+				classes = $this.attr('class'),
 				indent = Math.max(0, $this.parents('li').length - 1),
-				href = $this.attr('href'),
+				href = id==='downloadBtnHeader' ? '/assets/JawwadAzam-Resume.pdf' : $this.attr('href'),
 				target = $this.attr('target');
 
 			b.push(
 				'<a ' +
-					'class="link depth-' + indent + '"' +
+					'id="' + id + '"' +
+					'class="link depth-' + indent + ' ' + classes + '"' +
 					( (typeof target !== 'undefined' && target != '') ? ' target="' + target + '"' : '') +
 					( (typeof href !== 'undefined' && href != '') ? ' href="' + href + '"' : '') +
+					( (typeof onClick !== 'undefined' && onClick != '') ? ' ' + onClick : '') +
 				'>' +
-					'<span class="indent-' + indent + '"></span>' +
-					$this.text() +
+					'<span class="indent-' + indent + '"></span>  &nbsp;' +
+					 $this.text() +
 				'</a>'
 			);
 

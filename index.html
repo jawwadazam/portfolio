@@ -43,7 +43,15 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="https://www.github.com/jawwadazam" class="icon brands alt fa-github" aria-hidden="true"></a></li>
+							<li>
+								<a 
+									href="https://www.github.com/jawwadazam" 
+									class="icon brands alt fa-github" 
+									target="_blank"  
+									rel="noopener" 
+									aria-hidden="true">
+								</a>
+							</li>
 						</ul>
 					</nav>
 				</header>
@@ -218,7 +226,7 @@
 				fetch('footer.html')
 					.then(response => response.text())
 					.then(data => document.getElementById('footer').innerHTML = data);
-
+							
 				document.getElementById('downloadBtn').addEventListener('click', function() {
 					console.log("Download button clicked");
 					const link = document.createElement('a');
